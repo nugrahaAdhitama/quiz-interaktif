@@ -1,6 +1,21 @@
 let questions = [];
 let currentQuestion = 0;
 
+document.querySelector(".choices").addEventListener("click", (event) => {
+  if (event.target.classList.contains("choice-card")) {
+    const selectedCard = event.target;
+    const allCards = document.querySelectorAll(".choice-card");
+    allCards.forEach((card) => {
+      if (card === selectedCard) {
+        card.classList.toggle("selected");
+      } else {
+        card.classList.remove("selected");
+      }
+    });
+  }
+});
+
+
 function loadQuestions() {
   fetch("data/question.json")
     .then((response) => response.json())
@@ -22,12 +37,10 @@ function displayQuestion() {
   for (let i = 0; i < choices.length; i++) {
     const choice = choices[i];
     const li = document.createElement("li");
-    const button = document.createElement("button");
-    button.classList.add("choice");
-    button.textContent = choice;
-    li.appendChild(button);
+    li.classList.add("choice-card");
+    li.textContent = choice;
     choicesList.appendChild(li);
-  }
+  }  
 
   updateNavigationButtons();
 }
