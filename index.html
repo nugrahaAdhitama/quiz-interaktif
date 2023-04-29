@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Quiz Interaktif</title>
+</head>
+<body>
+  <header>
+    <h1>Quiz Interaktif</h1>
+  </header>
+  <main>
+    <section class="quiz-container">
+      <h2 class="question">Pertanyaan di sini</h2>
+      <ul class="choices">
+        <li><button class="choice">Pilihan A</button></li>
+        <li><button class="choice">Pilihan B</button></li>
+        <li><button class="choice">Pilihan C</button></li>
+        <li><button class="choice">Pilihan D</button></li>
+      </ul>
+      <button class="prev-question" disabled>Sebelumnya</button>
+      <button class="next-question">Selanjutnya</button>
+    </section>
+    <section class="results-container" style="display:none;">
+      <h2>Hasil</h2>
+      <p>Skor Anda: <span class="score">0</span></p>
+      <button class="restart">Mulai Ulang</button>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+[
+  {
+    "question": "Apa ibukota Indonesia?",
+    "choices": ["Jakarta", "Bandung", "Surabaya", "Medan"],
+    "answer": "Jakarta"
+  },
+  {
+    "question": "Apa singkatan dari HTML?",
+    "choices": [
+      "Hyper Text Markup Language",
+      "High Text Markup Language",
+      "Hyperlinks and Text Markup Language",
+      "Home Tool Markup Language"
+    ],
+    "answer": "Hyper Text Markup Language"
+  }
+]
