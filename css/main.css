@@ -1,0 +1,28 @@
+#welcome {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#viewScores {
+    background-color: #007BFF;
+}
+
+#noScoresMessage {
+    color: red;
+    font-style: italic;
+}
+
+#quizContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.choice {
+    display: block;
+    margin: 10px 0;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
