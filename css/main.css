@@ -1,10 +1,39 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+h1, h2 {
+    color: #3F51B5;
+}
+
+button {
+    background-color: #3F51B5;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5C6BC0;
+}
+
 #welcome {
     max-width: 600px;
     margin: 0 auto;
+    text-align: center;
 }
 
 #viewScores {
-    background-color: #007BFF;
+    background-color: #FFC107;
+}
+
+#viewScores:hover {
+    background-color: #FFCA28;
 }
 
 #noScoresMessage {
@@ -25,4 +54,37 @@
 
 input[type="radio"] {
     margin-right: 10px;
+}
+
+#scoreHistory {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#scoreTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#scoreTable th, #scoreTable td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+}
+
+#scoreTable th {
+    background-color: #3F51B5;
+    color: #FFFFFF;
+}
+
+#scoreTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }

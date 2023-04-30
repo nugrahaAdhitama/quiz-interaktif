@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Skor</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Skor Kuis Sebelumnya</h1>
-    <div id="scoreHistory"></div>
-    <button id="goBack">Kembali ke Halaman Utama</button>
+    <div class="container">
+      <table id="scoreTable">
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Nama Kuis</th>
+            <th>Skor</th>
+          </tr>
+        </thead>
+        <tbody id="scoreHistory">
+        </tbody>
+      </table>
+      <button id="goBack">Kembali ke Halaman Utama</button>
+    </div>
     <script src="js/scores.js"></script>
 </body>
 </html>

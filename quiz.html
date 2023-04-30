@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Interaktif</title>
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Quiz Interaktif</h1>
-    <div id="quizContainer">
-        <h2 id="question"></h2>
-        <div id="choices">
+    <div class="container">
+        <h1>Quiz Interaktif</h1>
+        <div id="quizContainer">
+            <h2 id="question"></h2>
+            <div id="choices">
+            </div>
+            <button id="prevQuestion" style="display:none;">Pertanyaan Sebelumnya</button>
+            <button id="nextQuestion">Pertanyaan Selanjutnya</button>
         </div>
-        <button id="prevQuestion" style="display:none;">Pertanyaan Sebelumnya</button>
-        <button id="nextQuestion">Pertanyaan Selanjutnya</button>
     </div>
     <script src="js/quiz.js"></script>
 </body>

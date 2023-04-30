@@ -3,14 +3,24 @@ const scoreHistory = JSON.parse(localStorage.getItem("scoreHistory")) || [];
 
 if (scoreHistory.length > 0) {
     scoreHistory.forEach((entry, index) => {
-        const scoreEntry = document.createElement("p");
-        scoreEntry.textContent = `Kuis ${index + 1} (${entry.date}): ${entry.score}`;
-        scoreHistoryContainer.appendChild(scoreEntry);
-    });
+        const row = scoreHistoryContainer.insertRow();
+        const dateCell = row.insertCell();
+        dateCell.textContent = entry.date;
+
+        const quizCell = row.insertCell();
+        quizCell.textContent = `Kuis ${index + 1}`;
+
+        const scoreCell = row.insertCell();
+        scoreCell.textContent = `${entry.score}`;
+    })
 } else {
-    scoreHistoryContainer.innerHTML = "<p>Anda belum pernah mengerjakan kuis</p>";
+    const row = scoreHistoryContainer.insertRow();
+    const cell = row.insertCell();
+    cell.textContent = "Anda belum pernah mengerjakan kuis";
+    cell.colSpan = 3;
+    cell.style.textAlign = "center";
 }
 
 document.getElementById("goBack").addEventListener("click", function() {
     location.href = "index.html";
-});
+})
