@@ -1,0 +1,384 @@
+aku ingin kamu mengingat isi file index.html, quiz.html, result.html, scores.html, css/main.css, js/main.js, js/quiz.js, js/result.js, js/scores.js, data/question.json berikut ini. Kamu tidak perlu berkomentar apa-apa aku hanya ingin kamu mengingatnya baik-baik.
+
+index.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Interaktif</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div id="welcome">
+      <h1>Selamat Datang di Quiz Interaktif</h1>
+      <p>Aplikasi ini akan menguji pengetahuan Anda melalui serangkaian pertanyaan. Semoga berhasil!</p>
+      <button id="startQuiz">Mulai Quiz</button>
+      <button id="viewScores">Lihat Skor Kuis Sebelumnya</button>
+    </div>
+  </div>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+quiz.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interaktif</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Interaktif</h1>
+        <div id="quizContainer">
+            <h2 id="question"></h2>
+            <div id="choices">
+            </div>
+            <button id="prevQuestion" style="display:none;">Pertanyaan Sebelumnya</button>
+            <button id="nextQuestion">Pertanyaan Selanjutnya</button>
+        </div>
+    </div>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
+
+result.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interaktif - Hasil</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Hasil Quiz</h1>
+        <p>Skor Anda: <span id="score"></span></p>
+        <button id="backToHome">Kembali ke Halaman Utama</button>
+    </div>
+    <script src="js/result.js"></script>
+</body>
+</html>
+
+scores.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Skor</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Skor Kuis Sebelumnya</h1>
+    <div class="container">
+      <table id="scoreTable">
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Nama Kuis</th>
+            <th>Skor</th>
+          </tr>
+        </thead>
+        <tbody id="scoreHistory">
+        </tbody>
+      </table>
+      <button id="goBack">Kembali ke Halaman Utama</button>
+    </div>
+    <script src="js/scores.js"></script>
+</body>
+</html>
+
+css/main.css
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
+}
+
+h1, h2 {
+    color: #3F51B5;
+}
+
+button {
+    background-color: #3F51B5;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5C6BC0;
+}
+
+#welcome {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#viewScores {
+    background-color: #FFC107;
+}
+
+#viewScores:hover {
+    background-color: #FFCA28;
+}
+
+#noScoresMessage {
+    color: red;
+    font-style: italic;
+}
+
+#quizContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.choice {
+    display: block;
+    margin: 10px 0;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+#scoreHistory {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#scoreTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#scoreTable th, #scoreTable td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+}
+
+#scoreTable th {
+    background-color: #3F51B5;
+    color: #FFFFFF;
+}
+
+#scoreTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+js/main.js:
+document.getElementById("viewScores").addEventListener("click", function() {
+    let previousScores = localStorage.getItem("previousScores");
+
+    if (!previousScores) {
+        document.getElementById("noScoresMessage").style.display = "block";
+    } else {
+        // Tampilkan skor sebelumnya (akan diimplementasikan nanti)
+    }
+});
+
+document.getElementById("startQuiz").addEventListener("click", function() {
+    location.href = "quiz.html";
+});
+
+document.getElementById("viewScores").addEventListener("click", function() {
+    location.href = "scores.html";
+});
+
+js/quiz.js:
+async function loadQuestions() {
+  const response = await fetch("data/question.json");
+  const questions = await response.json();
+  return questions;
+}
+
+document.addEventListener("DOMContentLoaded", async function () {
+  const questions = await loadQuestions();
+
+  let currentQuestionIndex = 0;
+
+  function showQuestion() {
+    const questionElement = document.getElementById("question");
+    questionElement.innerText = questions[currentQuestionIndex].question;
+
+    const choicesElement = document.getElementById("choices");
+    choicesElement.innerHTML = "";
+
+    for (let i = 0; i < questions[currentQuestionIndex].choices.length; i++) {
+      const choice = document.createElement("label");
+      choice.classList.add("choice");
+
+      const radioInput = document.createElement("input");
+      radioInput.type = "radio";
+      radioInput.name = "choice";
+      radioInput.value = i;
+
+      choice.appendChild(radioInput);
+      choice.appendChild(
+        document.createTextNode(questions[currentQuestionIndex].choices[i])
+      );
+      choicesElement.appendChild(choice);
+    }
+
+    updateButtons();
+  }
+
+  let userAnswers = [];
+
+  function getUserAnswer() {
+    const radioInputs = document.getElementsByName("choice");
+    for (const radioInput of radioInputs) {
+      if (radioInput.checked) {
+        return questions[currentQuestionIndex].choices[parseInt(radioInput.value)];
+      }
+    }
+    return null;
+  }  
+
+  function nextQuestion() {
+    const userAnswer = getUserAnswer();
+    if (userAnswer === null) {
+      alert("Silakan pilih satu jawaban.");
+      return;
+    }
+    userAnswers[currentQuestionIndex] = userAnswer; // <-- Menyimpan jawaban pengguna
+  
+    if (currentQuestionIndex < questions.length - 1) {
+      currentQuestionIndex++;
+      showQuestion();
+    } else {
+      const score = calculateScore(userAnswers);
+      const currentDate = new Date();
+      const scoreEntry = {
+        date: currentDate.toISOString().slice(0, 10),
+        score: score,
+      };
+  
+      let scoreHistory = JSON.parse(localStorage.getItem("scoreHistory")) || [];
+      scoreHistory.push(scoreEntry);
+      localStorage.setItem("scoreHistory", JSON.stringify(scoreHistory));
+  
+      localStorage.setItem("latestScore", score);
+  
+      location.href = "result.html";
+    }
+  }
+  
+  function calculateScore(userAnswers) {
+    let correctAnswers = 0;
+    for (let i = 0; i < questions.length; i++) {
+      if (userAnswers[i] === questions[i].answer) { // <-- Mengganti correctAnswer menjadi answer
+        correctAnswers++;
+      }
+    }
+    const scorePercentage = (correctAnswers / questions.length) * 100;
+    return Math.round(scorePercentage);
+  }
+  
+
+  function prevQuestion() {
+    const userAnswer = getUserAnswer();
+    userAnswers[currentQuestionIndex] = userAnswer;
+
+    currentQuestionIndex--;
+    showQuestion();
+  }
+
+  document.getElementById("prevQuestion").addEventListener("click", prevQuestion);
+  function updateButtons() {
+    const prevQuestionButton = document.getElementById("prevQuestion");
+    const nextQuestionButton = document.getElementById("nextQuestion");
+
+    if (currentQuestionIndex === 0) {
+      prevQuestionButton.style.display = "none";
+    } else {
+      prevQuestionButton.style.display = "inline-block";
+    }
+
+    if (currentQuestionIndex === questions.length - 1) {
+      nextQuestionButton.innerText = "Selesai";
+    } else {
+      nextQuestionButton.innerText = "Pertanyaan Selanjutnya";
+    }
+  }
+
+  document
+    .getElementById("nextQuestion")
+    .addEventListener("click", nextQuestion);
+
+  showQuestion();
+});
+
+js/result.js:
+document.getElementById("score").innerText = localStorage.getItem("latestScore");
+
+document.getElementById("backToHome").addEventListener("click", function() {
+    location.href = "index.html";
+});
+
+js/scores.js:
+const scoreHistoryContainer = document.getElementById("scoreHistory")
+const scoreHistory = JSON.parse(localStorage.getItem("scoreHistory")) || [];
+
+if (scoreHistory.length > 0) {
+    scoreHistory.forEach((entry, index) => {
+        const row = scoreHistoryContainer.insertRow();
+        const dateCell = row.insertCell();
+        dateCell.textContent = entry.date;
+
+        const quizCell = row.insertCell();
+        quizCell.textContent = `Kuis ${index + 1}`;
+
+        const scoreCell = row.insertCell();
+        scoreCell.textContent = `${entry.score}`;
+    })
+} else {
+    const row = scoreHistoryContainer.insertRow();
+    const cell = row.insertCell();
+    cell.textContent = "Anda belum pernah mengerjakan kuis";
+    cell.colSpan = 3;
+    cell.style.textAlign = "center";
+}
+
+document.getElementById("goBack").addEventListener("click", function() {
+    location.href = "index.html";
+})
+
+data/question.json:
+[
+  {
+     "question": "Apa ibukota Indonesia?",
+     "choices": ["Jakarta", "Bandung", "Surabaya"],
+     "answer": "Jakarta"
+  },
+  {
+     "question": "2 + 2 = ?",
+     "choices": ["2", "3", "4"],
+     "answer": "4"
+  }
+]
